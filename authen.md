@@ -1,0 +1,11 @@
+- Salt là chuỗi bất kỳ -> mã hoá các password giống nhau cho ra các string khác nhau
+- Flow login:
+    - Find user, email trong db theo input từ request
+    - Hash pass lấy từ request và compare với pass trong db
+    - Tạo access token và refresh token
+    - Return token cho client
+- Flow xử lý limit token:
+    - Tạo table token trong đó có field chứa token signature của token, field chứa thông tin mobile devide, field chứa user id
+    - Khi gen được token cho user thì insert vào table token
+    - Khi validate token thì cần check thêm token signature của user đó còn tồn tại không
+    - Khi user muốn remove token thì chỉ cần xoá record có token signature tương ứng đó đi

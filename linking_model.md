@@ -1,0 +1,2 @@
+- Dùng preload để get data các field có quan hệ 1-1, 1-n
+- Để tránh dư thừa data khi eage loading thì nên định nghĩa riêng model common chỉ có các field public

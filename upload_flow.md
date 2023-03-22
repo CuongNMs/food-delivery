@@ -1,0 +1,6 @@
+- Get fileHeader from request (in gincontext)
+- Get folder sẽ upload file ảnh vào từ request sử dụng defaultPostForm
+- Mở file từ fileHeader và đưa vào mảng byte 
+- Xử lý upload file từ mảng byte
+- Không request trực tiếp ảnh từ s3 mà nên thông qua cloudfront do tính ổn định
+- Best practice: Sử dụng presign url của aws s3 để upload file

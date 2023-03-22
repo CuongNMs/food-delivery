@@ -1,0 +1,9 @@
+- Type assertion recursion
+- Defer function declare before exception
+- Three ways use middleware in gin: Global in main, in group, in specific endpoint
+- Create 1 go routine sẽ schedule routine đó ở stack khác, resource khác -> k dùng chung recover đc -> phải định nghĩa defer ngay trong define của go routine
+- Flow xử lý paging theo id
+  - Định nghĩa struct uid
+  - Nhúng uid vào model
+  - Trước khi return model thì thực hiện gen uid từ id của model -> id trả về client thực chất là uid
+  - Khi client truyền id vào paging thì degen id đó sang id db sau đó where điều kiện id < [id input] trong query list

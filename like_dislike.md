@@ -1,0 +1,3 @@
+- Trường hợp xử lý phân trang với các data không có primary key thì xử lý tương tự với field được sort
+- Với table có lượng data lớn -> tạo một field like_count chứa số lượng like của restaurant đó. Xử lý update field đó trong storage của restaurant. Khi like thì ở biz của restaurant_like sẽ inject thêm storage update của restaurant -> storage của restaurant_like thực hiện insert table restaurant_like, storate của resturant thực hiện update like_count của table restaurant. (không thực hiện update restaurant ở storage restaurant_like).
+- Xử lý update like_count được đưa vào go routine để tránh block flow trường hợp có lỗi.
